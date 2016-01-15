@@ -1,0 +1,33 @@
+{
+  "name": "wallet",
+  "version": "1.0.0",
+  "description": "Wallet",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paysbuy/wallet.git"
+  },
+  "author": "PAYSBUY",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paysbuy/wallet/issues"
+  },
+  "homepage": "https://github.com/paysbuy/wallet",
+  "dependencies": {
+    "express": "^4.12.4",
+    "mysql": "^2.10.2",
+    "pg": "^4.4.3",
+    "pg-hstore": "^2.3.2",
+    "redis": "^0.12.1",
+    "sequelize": "3.3.2",
+    "sqlite3": "^3.1.1",
+    "tedious": "^1.13.2"
+  }
+}

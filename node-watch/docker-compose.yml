@@ -1,0 +1,40 @@
+redis:
+  image: redis
+  container_name: redis
+  ports:
+      - "6379:6379"
+     
+postgreSQL:
+  container_name: postgresql
+  restart: always
+  image: sameersbn/postgresql:9.4-11
+  ports:
+    - "5432:5432"
+  environment:
+    - DB_USER=dbuser
+    - DB_PASS=dbuserpass
+    - DB_NAME=dbname
+
+node1:
+  container_name: login
+  build: ../login
+  links:
+      - redis
+      - postgreSQL
+  ports:
+      - "3000:3000"
+
+node2:
+  container_name: dashboard
+  build: ../dashboard
+  links:
+      - redis
+      - postgreSQL
+  ports:
+      - "3001:3001"
+
+node_login:
+  container_name: node_login
+  build: ../node_login
+  ports:
+      - "4000:4000"
